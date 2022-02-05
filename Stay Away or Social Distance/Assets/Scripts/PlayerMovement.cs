@@ -7,15 +7,20 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveSpeed;
     
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
 
     Vector2 movement;
+
+
+
+    void Start() {
+        rb = gameObject.GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         MovementInput();
-        //FaceMouse();
     }
 
     private void FixedUpdate() {
