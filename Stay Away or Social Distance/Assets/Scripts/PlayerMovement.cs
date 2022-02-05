@@ -15,10 +15,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovementInput();
+        //FaceMouse();
     }
 
     private void FixedUpdate() {
         rb.velocity = movement*moveSpeed;
+        FaceMouse();
     }
 
     void MovementInput() {
@@ -26,5 +28,14 @@ public class PlayerMovement : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         movement = new Vector2(moveX, moveY).normalized;
+    }
+
+    void FaceMouse() {
+
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        Vector2 Direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+        transform.up = Direction;
     }
 }
