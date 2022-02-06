@@ -47,6 +47,8 @@ public class Spawner : MonoBehaviour
 
         
         GameObject instantiatedNPC = Instantiate(SpawnNPC, randomPosition, Quaternion.identity);
+
+        instantiatedNPC.GetComponent<FriendlyMovement>().AddBounds(randomBounds);
     }
 
     public void InstantiateInfectedNPC() {
@@ -60,5 +62,6 @@ public class Spawner : MonoBehaviour
 
         
         GameObject instantiatedNPC = Instantiate(SpawnNPC, randomPosition, Quaternion.identity);
+        instantiatedNPC.GetComponent<InfectedMovement>().AddBounds(randomBounds);
     }
 }

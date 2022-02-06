@@ -22,6 +22,7 @@ public class InfectedHealth : MonoBehaviour
         enemyHealthBar.SetEnemyHealth(enemyCurrentHealth);
         if (enemyCurrentHealth <= 0) {
             GameObject instantiatedNPC = Instantiate(friendlyNPC, gameObject.transform.position, Quaternion.identity);
+            instantiatedNPC.GetComponent<FriendlyMovement>().AddBounds(gameObject.GetComponent<InfectedMovement>().bounds);
             Destroy(gameObject);
         }
     }

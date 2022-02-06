@@ -17,11 +17,14 @@ public class FriendlyHealth : MonoBehaviour
         friendlyHealthBar.SetFriendlyMaxHealth(friendlyMaxHealth);
     }
 
-    public void FriendlyTakeDamage(int damage) {
+    public void FriendlyTakeDamage(int damage)
+    {
         friendlyCurrentHealth -= damage;
         friendlyHealthBar.SetFriendlyHealth(friendlyCurrentHealth);
-        if (friendlyCurrentHealth <= 0) {
+        if (friendlyCurrentHealth <= 0)
+        {
             GameObject instantiatedNPC = Instantiate(infectedNPC, gameObject.transform.position, Quaternion.identity);
+            instantiatedNPC.GetComponent<InfectedMovement>().AddBounds(gameObject.GetComponent<FriendlyMovement>().bounds);
             Destroy(gameObject);
         }
     }

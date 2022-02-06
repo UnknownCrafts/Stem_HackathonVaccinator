@@ -5,8 +5,7 @@ using UnityEngine;
 public class InfectedMovement : MonoBehaviour
 {
 
-    public Vector2 highBounds;
-    public Vector2 lowBounds;
+    public BoxCollider2D bounds = new BoxCollider2D();
 
     private Transform target;
     private Vector2 choosePoint;
@@ -15,11 +14,20 @@ public class InfectedMovement : MonoBehaviour
     [SerializeField] private int attackDamage = 10;
     [SerializeField] private int attackSpeed = 1;
     private float canAttack;
-
-
+    void Start()
+    {
+        SelectLocation();
+    }
+    public void AddBounds(BoxCollider2D newBounds)
+    {
+        bounds = newBounds;
+    }
     void SelectLocation()
     {
-        choosePoint = new Vector2(Random.Range(lowBounds.x, highBounds.x), Random.Range(highBounds.y, lowBounds.y));
+		Vector2 boundsPos = new Vector2(bounds.transform.position.x, bounds.transform.position.y) + bounds.offset;
+		float randomPosX = Random.Range(boundsPos.x - bounds.size.x / 2, boundsPos.x + bounds.size.x / 2);
+        float randomPosY = Random.Range(boundsPos.y - bounds.size.y / 2, boundsPos.y + bounds.size.y / 2);
+		choosePoint =new Vector2(randomPosX, randomPosY);
     }
     private void FixedUpdate()
     {
