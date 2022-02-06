@@ -24,7 +24,7 @@ public class InfectedHealth : MonoBehaviour
         }
     }
 
-    void EnemyTakeDamage(int damage) {
+    public void EnemyTakeDamage(int damage) {
         enemyCurrentHealth -= damage;
         enemyHealthBar.SetEnemyHealth(enemyCurrentHealth);
     }
