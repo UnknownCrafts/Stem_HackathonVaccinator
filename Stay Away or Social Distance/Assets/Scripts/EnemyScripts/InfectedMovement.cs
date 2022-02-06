@@ -30,6 +30,6 @@ public class InfectedMovement : MonoBehaviour
     }
     void SelectLocation()
     {
-        target = new Vector2(Random.Range(lowBounds.x, highBounds.x), Random.Range(highBounds.y, lowBounds.y));
+        target = new Vector2(Random.Range(lowBounds.x, highBounds.x), Random.Range(highBounds.y, lowBounds.y)).normalized;
     }
 }
