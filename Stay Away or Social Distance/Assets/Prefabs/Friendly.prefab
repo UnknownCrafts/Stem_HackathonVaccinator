@@ -565,4 +565,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   friendlyMaxHealth: 100
+  infectedNPC: {fileID: 5915095064388847639, guid: 9aa795f8e8132c224973fe0760baed63, type: 3}
   friendlyHealthBar: {fileID: 6549749666809312215}

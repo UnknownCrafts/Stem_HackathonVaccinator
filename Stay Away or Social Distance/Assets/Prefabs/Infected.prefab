@@ -615,4 +615,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMaxHealth: 100
+  friendlyNPC: {fileID: 8983350291296493572, guid: 88670fe98c9e349f2bcdbf06add037b7, type: 3}
   enemyHealthBar: {fileID: 5692724373883228423}

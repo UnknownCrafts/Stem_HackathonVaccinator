@@ -6,6 +6,7 @@ public class FriendlyHealth : MonoBehaviour
 {
     public int friendlyMaxHealth = 100;
     int friendlyCurrentHealth;
+    [SerializeField] GameObject infectedNPC;
 
     public FriendlyHealthBar friendlyHealthBar;
 
@@ -16,10 +17,11 @@ public class FriendlyHealth : MonoBehaviour
         friendlyHealthBar.SetFriendlyMaxHealth(friendlyMaxHealth);
     }
 
-    public void EnemyTakeDamage(int damage) {
+    public void FriendlyTakeDamage(int damage) {
         friendlyCurrentHealth -= damage;
         friendlyHealthBar.SetFriendlyHealth(friendlyCurrentHealth);
         if (friendlyCurrentHealth <= 0) {
+            GameObject instantiatedNPC = Instantiate(infectedNPC, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

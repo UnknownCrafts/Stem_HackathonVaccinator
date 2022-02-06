@@ -44,6 +44,14 @@ public class InfectedMovement : MonoBehaviour
 				canAttack += Time.deltaTime;
 			}
 		}
+		if (other.gameObject.tag == "Friendly") {
+			if (attackSpeed <= canAttack) {
+				other.gameObject.GetComponent<FriendlyHealth>().FriendlyTakeDamage(attackDamage);
+				canAttack = 0f;
+			} else {
+				canAttack += Time.deltaTime;
+			}
+		}
 	}
 
 	private void OnCollisionStay2D(Collision2D other) {
@@ -55,16 +63,27 @@ public class InfectedMovement : MonoBehaviour
 				canAttack += Time.deltaTime;
 			}
 		}
+		if (other.gameObject.tag == "Friendly") {
+			if (attackSpeed <= canAttack) {
+				other.gameObject.GetComponent<FriendlyHealth>().FriendlyTakeDamage(attackDamage);
+				canAttack = 0f;
+			} else {
+				canAttack += Time.deltaTime;
+			}
+		} 
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
 			target = other.transform;
 		}
+		if (other.gameObject.tag == "Friendly") {
+			target = other.transform;
+		}
 	}
 
 	private void OnTriggerExit2D(Collider2D other) {
-		if (other.gameObject.tag == "Player") {
+		if (other.gameObject.tag == "Player" && target != null || other.gameObject.tag == "Friendly" && target != null) {
 			target = null;
 		}
 	}
