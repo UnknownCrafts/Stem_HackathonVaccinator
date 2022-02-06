@@ -50,7 +50,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Fire() {
         float VaccineSpeed = 10f;
-
+        FindObjectOfType<AudioManager>().Play("Gunshot");
         float angle = AngleTowardsMouse(shootingPos.transform.position);
 
         Quaternion rotation = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
