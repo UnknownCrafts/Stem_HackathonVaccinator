@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &380354485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 380354486}
+  - component: {fileID: 380354487}
+  m_Layer: 0
+  m_Name: Range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &380354486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380354485}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5915095064388847634}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &380354487
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380354485}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10
 --- !u!1 &5692724373883228420
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +445,7 @@ GameObject:
   - component: {fileID: 5035786921533953256}
   - component: {fileID: -1879954976502505828}
   - component: {fileID: 1950461715}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Infected
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -417,6 +464,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5692724374726562062}
+  - {fileID: 380354486}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -549,9 +597,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5721172891fe2699c380b6a3932e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highBounds: {x: 0, y: 0}
-  lowBounds: {x: 0, y: 0}
-  moveSpeed: 0
+  highBounds: {x: 7, y: 4}
+  lowBounds: {x: -7, y: 4}
+  moveSpeed: 5
+  attackDamage: 10
+  attackSpeed: 1
 --- !u!114 &1950461715
 MonoBehaviour:
   m_ObjectHideFlags: 0
