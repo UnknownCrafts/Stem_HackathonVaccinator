@@ -427,11 +427,11 @@ PrefabInstance:
       objectReference: {fileID: 1778186339}
     - target: {fileID: 2823999529287332613, guid: 56ff6c3d7872746f0bddd37bbf43d5ab, type: 3}
       propertyPath: FriendlyNPC_Count
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2823999529287332613, guid: 56ff6c3d7872746f0bddd37bbf43d5ab, type: 3}
       propertyPath: InfectedNPC_Count
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2823999529287332613, guid: 56ff6c3d7872746f0bddd37bbf43d5ab, type: 3}
       propertyPath: bounds.Array.data[0]
