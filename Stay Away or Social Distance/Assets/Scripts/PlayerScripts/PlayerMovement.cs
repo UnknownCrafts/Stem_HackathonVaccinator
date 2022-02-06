@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         MovementInput();
         Vector3 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-
+        
         if (mousePosition.x > 0f) {
             transform.localScale = new Vector3(1f, 1f, 1f);
         } else if (mousePosition.x < 0f) {
