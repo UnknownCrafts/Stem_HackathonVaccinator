@@ -13,7 +13,7 @@ public class InfectedMovement : MonoBehaviour
     public float moveSpeed;
     private Vector2 position;
     [SerializeField] private int attackDamage = 10;
-	[SerializeField] private int attackSpeed = 1;
+    [SerializeField] private int attackSpeed = 1;
     private float canAttack;
 
 
@@ -21,70 +21,79 @@ public class InfectedMovement : MonoBehaviour
     {
         choosePoint = new Vector2(Random.Range(lowBounds.x, highBounds.x), Random.Range(highBounds.y, lowBounds.y));
     }
-    private void FixedUpdate() {
-		if (target != null) {
-			float step = moveSpeed * Time.deltaTime;
-			transform.position = Vector2.MoveTowards(transform.position, target.position, step);
-		} else {
+    private void FixedUpdate()
+    {
+
+        float step = moveSpeed * Time.deltaTime;
+        canAttack += Time.deltaTime;
+        if (target != null)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+        }
+        else
+        {
             position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
             if (Vector2.Distance(choosePoint, position) < 0.001f)
             {
                 SelectLocation();
             }
-            gameObject.transform.position = Vector2.MoveTowards(position, choosePoint, Time.deltaTime * moveSpeed);
+            gameObject.transform.position = Vector2.MoveTowards(position, choosePoint, step);
         }
-	}
+    }
 
-	private void OnCollisionEnter2D(Collision2D other) {
-		if (other.gameObject.tag == "Player") {
-			if (attackSpeed <= canAttack) {
-				other.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
-				canAttack = 0f;
-			} else {
-				canAttack += Time.deltaTime;
-			}
-		}
-		if (other.gameObject.tag == "Friendly") {
-			if (attackSpeed <= canAttack) {
-				other.gameObject.GetComponent<FriendlyHealth>().FriendlyTakeDamage(attackDamage);
-				canAttack = 0f;
-			} else {
-				canAttack += Time.deltaTime;
-			}
-		}
-	}
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (attackSpeed <= canAttack)
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                other.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+                canAttack = 0f;
+            }
+            if (other.gameObject.tag == "Friendly")
+            {
+                other.gameObject.GetComponent<FriendlyHealth>().FriendlyTakeDamage(attackDamage);
+                canAttack = 0f;
+            }
+        }
+    }
 
-	private void OnCollisionStay2D(Collision2D other) {
-		if (other.gameObject.tag == "Player") {
-			if (attackSpeed <= canAttack) {
-				other.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
-				canAttack = 0f;
-			} else {
-				canAttack += Time.deltaTime;
-			}
-		}
-		if (other.gameObject.tag == "Friendly") {
-			if (attackSpeed <= canAttack) {
-				other.gameObject.GetComponent<FriendlyHealth>().FriendlyTakeDamage(attackDamage);
-				canAttack = 0f;
-			} else {
-				canAttack += Time.deltaTime;
-			}
-		} 
-	}
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (attackSpeed <= canAttack)
+        {
 
-	private void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag == "Player") {
-			target = other.transform;
-		}
-		if (other.gameObject.tag == "Friendly") {
-			target = other.transform;
-		}
-	}
+            if (other.gameObject.tag == "Player")
+            {
 
-	private void OnTriggerExit2D(Collider2D other) {
-		if (other.gameObject.tag == "Player" && target != null || other.gameObject.tag == "Friendly" && target != null) {
-			target = null;
-		}
-	}
+                other.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+                canAttack = 0f;
+            }
+            if (other.gameObject.tag == "Friendly")
+            {
+                other.gameObject.GetComponent<FriendlyHealth>().FriendlyTakeDamage(attackDamage);
+                canAttack = 0f;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            target = other.transform;
+        }
+        if (other.gameObject.tag == "Friendly")
+        {
+            target = other.transform;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player" && target != null || other.gameObject.tag == "Friendly" && target != null)
+        {
+            target = null;
+        }
+    }
 }
