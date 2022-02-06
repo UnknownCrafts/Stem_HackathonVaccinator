@@ -19,11 +19,18 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovementInput();
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        if (mousePosition.x > 0f) {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        } else if (mousePosition.x < 0f) {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
     }
 
     private void FixedUpdate() {
         rb.velocity = movement*moveSpeed;
-        FaceMouse();
     }
 
     void MovementInput() {
@@ -38,7 +45,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        Vector2 Direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-        transform.up = Direction;
+        if (mousePosition.x > 0f) {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        } else if (mousePosition.x < 0f) {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
     }
 }
