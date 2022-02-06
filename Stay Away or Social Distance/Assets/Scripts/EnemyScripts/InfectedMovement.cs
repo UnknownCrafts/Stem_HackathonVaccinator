@@ -106,7 +106,6 @@ public class InfectedMovement : MonoBehaviour
         {
             targetList.Remove(other.GetInstanceID());
             targetPositions.Remove(other.GetInstanceID());
-            print(targetList.Count);
         }
     }
 }
