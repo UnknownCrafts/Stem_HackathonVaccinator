@@ -23,7 +23,11 @@ public class Vaccine : MonoBehaviour
         rb.velocity = transform.up * VaccineVelocity;
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Enemy") {
+            other.GetComponent<InfectedHealth>().EnemyTakeDamage(100);
+            Destroy(gameObject);
+        }
         Destroy(gameObject);
     }
 }

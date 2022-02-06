@@ -5,16 +5,11 @@ using UnityEngine.UI;
 
 public class InfectedHealthBar : MonoBehaviour
 {
-    Slider slider;
+    public Slider slider;
 
     public Gradient gradient;
 
-    Image fill;
-
-    void Start() {
-        slider = gameObject.GetComponent<Slider>();
-        fill = gameObject.GetComponentInChildren<Image>();
-    }
+    public Image fill;
 
 
     public void SetEnemyMaxHealth(int health) {
