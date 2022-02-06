@@ -16,15 +16,11 @@ public class InfectedHealth : MonoBehaviour
         enemyHealthBar.SetEnemyMaxHealth(enemyMaxHealth);
     }
 
-    void Update() {
-        
-        if (enemyCurrentHealth <= 0) {
-            Destroy(gameObject);
-        }
-    }
-
     public void EnemyTakeDamage(int damage) {
         enemyCurrentHealth -= damage;
         enemyHealthBar.SetEnemyHealth(enemyCurrentHealth);
+        if (enemyCurrentHealth <= 0) {
+            Destroy(gameObject);
+        }
     }
 }
