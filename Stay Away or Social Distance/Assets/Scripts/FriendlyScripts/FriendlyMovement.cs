@@ -25,13 +25,11 @@ public class FriendlyMovement : MonoBehaviour
         float randomPosX = Random.Range(boundsPos.x - bounds.size.x / 2, boundsPos.x + bounds.size.x / 2);
         float randomPosY = Random.Range(boundsPos.y - bounds.size.y / 2, boundsPos.y + bounds.size.y / 2);
         choosePoint = new Vector2(randomPosX, randomPosY);
-        print(choosePoint);
     }
 
     void FixedUpdate()
     {
         position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-        print(position);
         if (Vector2.Distance(choosePoint, position) < 0.001f)
         {
             SelectLocation();
