@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c730fcca54794c51a2dc65c18cb7947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 5091882239546667162}
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}
@@ -207,6 +208,7 @@ MonoBehaviour:
     m_Mode: 1
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
+  fill: {fileID: 5091882238762475987}
 --- !u!1 &5091882239797042886
 GameObject:
   m_ObjectHideFlags: 0
