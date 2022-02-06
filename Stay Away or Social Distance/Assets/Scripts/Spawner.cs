@@ -21,12 +21,8 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         iterations = FriendlyNPC_Count + InfectedNPC_Count;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        while (iterations <=0) {
+        
+        if (iterations >=0) {
             for (int i = 0; i < FriendlyNPC_Count; i++)
             {
                 InstantiateFriendlyNPC();
@@ -39,6 +35,7 @@ public class Spawner : MonoBehaviour
             }
         }
     }
+
     public void InstantiateFriendlyNPC() {
         randomBounds = bounds[Random.Range(0, bounds.Count)];
         SpawnNPC = NPC[0];
