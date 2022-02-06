@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VaccineVelocity: 0
+  damage: 34
 --- !u!50 &9220037145994197702
 Rigidbody2D:
   serializedVersion: 4
