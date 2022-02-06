@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
 
     Vector2 movement;
-
     void Start() {
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
@@ -19,18 +19,17 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovementInput();
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+    }
+
+    private void FixedUpdate() {
+        rb.velocity = movement*moveSpeed;
+        Vector3 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
 
         if (mousePosition.x > 0f) {
             transform.localScale = new Vector3(1f, 1f, 1f);
         } else if (mousePosition.x < 0f) {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-    }
-
-    private void FixedUpdate() {
-        rb.velocity = movement*moveSpeed;
     }
 
     void MovementInput() {
