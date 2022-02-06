@@ -598,6 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds: {fileID: 0}
+  maxTargetingTime: 3
   moveSpeed: 5
   attackDamage: 10
   attackSpeed: 1
