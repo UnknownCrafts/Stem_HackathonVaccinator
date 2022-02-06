@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private List<BoxCollider2D> bounds = new List<BoxCollider2D>();
     [SerializeField] private List<GameObject> NPC = new List<GameObject>();
+    public BoxCollider2D npcBounds;
 
     [SerializeField] private int FriendlyNPC_Count;
     [SerializeField] private int InfectedNPC_Count;
@@ -48,7 +49,7 @@ public class Spawner : MonoBehaviour
         
         GameObject instantiatedNPC = Instantiate(SpawnNPC, randomPosition, Quaternion.identity);
 
-        instantiatedNPC.GetComponent<FriendlyMovement>().AddBounds(randomBounds);
+        instantiatedNPC.GetComponent<FriendlyMovement>().AddBounds(npcBounds);
     }
 
     public void InstantiateInfectedNPC() {
@@ -62,6 +63,6 @@ public class Spawner : MonoBehaviour
 
         
         GameObject instantiatedNPC = Instantiate(SpawnNPC, randomPosition, Quaternion.identity);
-        instantiatedNPC.GetComponent<InfectedMovement>().AddBounds(randomBounds);
+        instantiatedNPC.GetComponent<InfectedMovement>().AddBounds(npcBounds);
     }
 }
