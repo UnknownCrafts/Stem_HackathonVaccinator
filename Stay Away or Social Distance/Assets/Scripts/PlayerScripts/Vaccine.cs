@@ -28,6 +28,5 @@ public class Vaccine : MonoBehaviour
             other.GetComponent<InfectedHealth>().EnemyTakeDamage(100);
             Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }
