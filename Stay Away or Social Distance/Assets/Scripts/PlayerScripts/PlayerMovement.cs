@@ -19,10 +19,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovementInput();
-    }
-
-    private void FixedUpdate() {
-        rb.velocity = movement*moveSpeed;
         Vector3 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
 
         if (mousePosition.x > 0f) {
@@ -30,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
         } else if (mousePosition.x < 0f) {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
+    }
+
+    private void FixedUpdate() {
+        rb.velocity = movement*moveSpeed;
     }
 
     void MovementInput() {
