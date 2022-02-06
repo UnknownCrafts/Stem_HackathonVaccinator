@@ -11,7 +11,6 @@ public class InfectedMovement : MonoBehaviour
     private Transform target;
     private Vector2 choosePoint;
     public float moveSpeed;
-    Rigidbody2D rb;
     private Vector2 position;
     [SerializeField] private int attackDamage = 10;
 	[SerializeField] private int attackSpeed = 1;

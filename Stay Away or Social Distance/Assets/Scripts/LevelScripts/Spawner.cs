@@ -38,7 +38,7 @@ public class Spawner : MonoBehaviour
 
     public void InstantiateFriendlyNPC() {
         randomBounds = bounds[Random.Range(0, bounds.Count)];
-        SpawnNPC = NPC[0];
+        SpawnNPC = NPC[1];
         Vector2 colliderPos = new Vector2(randomBounds.transform.position.x, randomBounds.transform.position.y) + randomBounds.offset;
         float randomPosX = Random.Range(colliderPos.x - randomBounds.size.x / 2, colliderPos.x + randomBounds.size.x / 2);
         float randomPosY = Random.Range(colliderPos.y - randomBounds.size.y / 2, colliderPos.y + randomBounds.size.y / 2);
