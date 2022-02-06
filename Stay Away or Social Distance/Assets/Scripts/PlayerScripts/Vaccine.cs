@@ -26,6 +26,7 @@ public class Vaccine : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Enemy") {
             other.GetComponent<InfectedHealth>().EnemyTakeDamage(100);
+            FindObjectOfType<AudioManager>().Play("InfectToNormal");
             Destroy(gameObject);
         }
     }
