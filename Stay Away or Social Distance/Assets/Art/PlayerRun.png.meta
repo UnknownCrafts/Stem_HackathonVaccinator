@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 83392f41a496df465bf041d02bdc8db0
+guid: 819507ff8857b3971a092f537f3792b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1291142199485707694
-    second: Infected_0
+      213: -7870276711496609559
+    second: PlayerRun_0
   - first:
-      213: 4814403432368482596
-    second: Infected_1
+      213: 1728719941392088379
+    second: PlayerRun_1
   - first:
-      213: 1781621470776792021
-    second: Infected_2
+      213: 5511062410843008217
+    second: PlayerRun_2
   - first:
-      213: -7358294159785076925
-    second: Infected_3
+      213: 1354115375237695471
+    second: PlayerRun_3
   - first:
-      213: -6588461835666982957
-    second: Infected_4
+      213: -4522731149510019502
+    second: PlayerRun_4
   - first:
-      213: 9169012972022723755
-    second: Infected_5
+      213: -3909304355900387050
+    second: PlayerRun_5
   - first:
-      213: 8328799429756675973
-    second: Infected_6
+      213: -4608814311081262565
+    second: PlayerRun_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,7 +124,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Infected_0
+      name: PlayerRun_0
       rect:
         serializedVersion: 2
         x: 0
@@ -138,14 +138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25a4325a201f41ee0800000000000000
-      internalID: -1291142199485707694
+      spriteID: 9e01737870927c290800000000000000
+      internalID: -7870276711496609559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Infected_1
+      name: PlayerRun_1
       rect:
         serializedVersion: 2
         x: 96
@@ -159,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 429aeb7f96230d240800000000000000
-      internalID: 4814403432368482596
+      spriteID: b3d3fc6a0a5adf710800000000000000
+      internalID: 1728719941392088379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Infected_2
+      name: PlayerRun_2
       rect:
         serializedVersion: 2
         x: 192
@@ -180,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d31cd9c94799b810800000000000000
-      internalID: 1781621470776792021
+      spriteID: 9dc2e45501a3b7c40800000000000000
+      internalID: 5511062410843008217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Infected_3
+      name: PlayerRun_3
       rect:
         serializedVersion: 2
         x: 288
@@ -201,14 +201,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 347dd25927612e990800000000000000
-      internalID: -7358294159785076925
+      spriteID: fe700f562c8cac210800000000000000
+      internalID: 1354115375237695471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Infected_4
+      name: PlayerRun_4
       rect:
         serializedVersion: 2
         x: 384
@@ -222,14 +222,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d7f9dc1ed41194a0800000000000000
-      internalID: -6588461835666982957
+      spriteID: 2567cd26bf70c31c0800000000000000
+      internalID: -4522731149510019502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Infected_5
+      name: PlayerRun_5
       rect:
         serializedVersion: 2
         x: 480
@@ -243,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba4fc52f7b0ee3f70800000000000000
-      internalID: 9169012972022723755
+      spriteID: 6119ba3966c5fb9c0800000000000000
+      internalID: -3909304355900387050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Infected_6
+      name: PlayerRun_6
       rect:
         serializedVersion: 2
         x: 576
@@ -264,8 +264,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5876f1814f6d59370800000000000000
-      internalID: 8328799429756675973
+      spriteID: b12c3487dc33a00c0800000000000000
+      internalID: -4608814311081262565
       vertices: []
       indices: 
       edges: []
