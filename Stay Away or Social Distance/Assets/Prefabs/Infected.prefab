@@ -565,3 +565,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMaxHealth: 100
+  enemyHealthBar: {fileID: 5692724373883228423}
