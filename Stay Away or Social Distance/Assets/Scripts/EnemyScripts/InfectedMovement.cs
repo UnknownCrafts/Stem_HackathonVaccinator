@@ -8,6 +8,8 @@ public class InfectedMovement : MonoBehaviour
     public BoxCollider2D bounds = new BoxCollider2D();
     private List<int> targetList = new List<int>();
     private Hashtable targetPositions = new Hashtable();
+    public float maxTargetingTime;
+    private float timeTargeting;
     private Vector2 choosePoint;
     public float moveSpeed;
     private Vector2 position;
@@ -33,7 +35,16 @@ public class InfectedMovement : MonoBehaviour
     {
 
         float step = moveSpeed * Time.deltaTime;
+
+        timeTargeting += Time.deltaTime;
         canAttack += Time.deltaTime;
+        if (timeTargeting >= maxTargetingTime && targetList.Count != 0)
+        {
+            int currentTarget = targetList[0];
+            targetPositions.Remove(currentTarget);
+            targetList.Remove(currentTarget);
+            timeTargeting = 0;
+        }
         if (targetList.Count != 0)
         {
             transform.position = Vector2.MoveTowards(transform.position, ((Transform)targetPositions[targetList[0]]).position, step);
@@ -106,6 +117,7 @@ public class InfectedMovement : MonoBehaviour
         {
             targetList.Remove(other.GetInstanceID());
             targetPositions.Remove(other.GetInstanceID());
+            timeTargeting = 0;
         }
     }
 }
