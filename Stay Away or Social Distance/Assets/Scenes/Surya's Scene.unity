@@ -285,7 +285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2120720002 stripped
 Transform:
@@ -413,14 +413,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 454401517, guid: 67ba08019c7184390948cd02d9f6eaa7, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 945170678, guid: 67ba08019c7184390948cd02d9f6eaa7, type: 3}
-      propertyPath: reloadTime
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 2729263239293814036, guid: 67ba08019c7184390948cd02d9f6eaa7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -487,20 +479,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1778186339}
     - target: {fileID: 2823999529287332613, guid: 56ff6c3d7872746f0bddd37bbf43d5ab, type: 3}
-      propertyPath: FriendlyNPC_Count
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2823999529287332613, guid: 56ff6c3d7872746f0bddd37bbf43d5ab, type: 3}
-      propertyPath: InfectedNPC_Count
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2823999529287332613, guid: 56ff6c3d7872746f0bddd37bbf43d5ab, type: 3}
       propertyPath: bounds.Array.data[0]
       value: 
       objectReference: {fileID: 330027476}
     - target: {fileID: 2823999529287332614, guid: 56ff6c3d7872746f0bddd37bbf43d5ab, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2823999529287332614, guid: 56ff6c3d7872746f0bddd37bbf43d5ab, type: 3}
       propertyPath: m_LocalPosition.x

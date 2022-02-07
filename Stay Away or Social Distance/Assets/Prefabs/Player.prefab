@@ -206,8 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VaccinePrefab: {fileID: 9220037145994197698, guid: c558d969177f942ac8ac2fa243861cbb, type: 3}
-  needle: {fileID: 0}
-  reloadTime: 0.5
+  reloadTime: 0.2
 --- !u!95 &1507860917
 Animator:
   serializedVersion: 3

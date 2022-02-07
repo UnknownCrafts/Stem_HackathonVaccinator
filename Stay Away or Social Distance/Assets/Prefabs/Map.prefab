@@ -57,6 +57,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 127.82579, y: 65.80813}
   m_EdgeRadius: 0
+--- !u!1 &549677936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 549677938}
+  - component: {fileID: 549677937}
+  m_Layer: 0
+  m_Name: PowerupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &549677938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549677936}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 992.8738, y: 663.282, z: -482.70895}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 979172577422654754}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &549677937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549677936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c03530619454cabb020b44e61aa892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds:
+  - {fileID: 6338458283448064379}
+  powerUps:
+  - {fileID: 7862838143215356072, guid: 96f9b9a418062448ba2d6a4147ec7331, type: 3}
 --- !u!1 &2019210964926430920
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +283,7 @@ Transform:
   - {fileID: 2013019413804285327}
   - {fileID: 330027477}
   - {fileID: 5152429311075610895}
+  - {fileID: 549677938}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -364,6 +412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bounds
       objectReference: {fileID: 0}
+    - target: {fileID: 1263688847905028313, guid: c61a12c15367722daa2197b5bf19a513, type: 3}
+      propertyPath: m_TagString
+      value: Bounds
+      objectReference: {fileID: 0}
     - target: {fileID: 2406735162218351054, guid: c61a12c15367722daa2197b5bf19a513, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -413,6 +465,11 @@ PrefabInstance:
 --- !u!4 &5152429311075610895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2406735162218351054, guid: c61a12c15367722daa2197b5bf19a513, type: 3}
+  m_PrefabInstance: {fileID: 7415013818437171393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &6338458283448064379 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3535838019305251258, guid: c61a12c15367722daa2197b5bf19a513, type: 3}
   m_PrefabInstance: {fileID: 7415013818437171393}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7415013820252641869
