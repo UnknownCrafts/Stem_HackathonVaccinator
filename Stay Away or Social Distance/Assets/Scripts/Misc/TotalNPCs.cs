@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TotalNPCs : MonoBehaviour
 {
@@ -33,5 +34,7 @@ public class TotalNPCs : MonoBehaviour
         totalInfected = GameObject.FindGameObjectsWithTag("Enemy").Length;
         totalFriendlyText.text = totalFriendly.ToString("0");
         totalInfectedText.text = totalInfected.ToString("0");
+        if(totalInfected)
+            SceneManager.LoadScene("Win Scene");
     }
 }
