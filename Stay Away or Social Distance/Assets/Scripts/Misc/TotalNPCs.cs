@@ -34,7 +34,7 @@ public class TotalNPCs : MonoBehaviour
         totalInfected = GameObject.FindGameObjectsWithTag("Enemy").Length;
         totalFriendlyText.text = totalFriendly.ToString("0");
         totalInfectedText.text = totalInfected.ToString("0");
-        if(totalInfected)
+        if(totalInfected <= 0)
             SceneManager.LoadScene("Win Scene");
     }
 }
