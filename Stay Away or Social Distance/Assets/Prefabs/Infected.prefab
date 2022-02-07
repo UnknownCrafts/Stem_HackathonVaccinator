@@ -599,7 +599,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds: {fileID: 0}
-  moveSpeed: 5
+  maxTargetingTime: 10
+  moveSpeed: 6
   attackDamage: 10
   attackSpeed: 1
 --- !u!114 &1950461715
@@ -629,7 +630,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6577597df95a305428ad8b450b3867ed, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.45
+  m_Volume: 0.19
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -638,7 +639,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0.71
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0.14
   rolloffMode: 0
   BypassEffects: 0

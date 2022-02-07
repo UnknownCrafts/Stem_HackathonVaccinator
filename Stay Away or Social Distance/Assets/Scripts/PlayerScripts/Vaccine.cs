@@ -11,11 +11,14 @@ public class Vaccine : MonoBehaviour
 
     Rigidbody2D rb;
 
+    ScoringScript score;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        score = GameObject.Find("Canvas").GetComponentInChildren<ScoringScript>();
         Destroy(gameObject, 10f);
     }
 
@@ -26,7 +29,7 @@ public class Vaccine : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Enemy") {
-
+            score.AddScore(10);
             FindObjectOfType<AudioManager>().Play("InfectToNormal");
             other.GetComponent<InfectedHealth>().EnemyTakeDamage(damage);
             Destroy(gameObject);
