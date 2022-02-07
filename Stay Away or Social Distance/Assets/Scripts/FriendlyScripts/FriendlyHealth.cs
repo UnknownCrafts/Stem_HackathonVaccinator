@@ -25,7 +25,12 @@ public class FriendlyHealth : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("NormalToInfect");
             GameObject instantiatedNPC = Instantiate(infectedNPC, gameObject.transform.position, Quaternion.identity);
+            try{
             instantiatedNPC.GetComponent<InfectedMovement>().AddBounds(gameObject.GetComponent<FriendlyMovement>().bounds);
+            }
+            catch {
+                instantiatedNPC.GetComponent<InfectedMovement>().AddBounds(gameObject.GetComponent<enforcerMovement>().bounds);
+            }
             Destroy(gameObject);
         }
     }
